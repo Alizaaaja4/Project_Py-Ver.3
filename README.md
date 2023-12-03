@@ -14,7 +14,6 @@ Developer :
 House Price Predictor version 3.8 is an application designed to facilitate users in predicting house prices through a user-friendly interface. This version introduces enhanced features that empower users to efficiently estimate property values based on various factors.
 
 #### User Mode Enhancements:
-     - Sign up and Sign in
      - Data Analysis and Prediction
      - View Predicted House Prices
      - User Profile
