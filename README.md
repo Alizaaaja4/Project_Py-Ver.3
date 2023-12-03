@@ -1,6 +1,6 @@
 <h1 align="center">Project House Price Predictor </h1>
 
-<h1 align="center"><a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=vscode,github,python,tensorflow" alt="Tubes Daskom"></a></h1>
+<h1 align="center"><a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=vscode,github,python" alt="Tubes Daskom"></a></h1>
 
 Project : Py-Ver.3
 
