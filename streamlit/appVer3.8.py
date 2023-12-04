@@ -16,6 +16,7 @@ df = pd.read_csv('covid_19_2020.csv')
 img = Image.open('covid-logo.png')
 st.sidebar.image(img)
 st.sidebar.header("Please Filter the Country Here: ")
+
 # Filter by Country
 selected_country = st.sidebar.selectbox(
     "Select the Country:",
