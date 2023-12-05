@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 import calendar
-import plotly.express as px
 from PIL import Image
 
 #emoji https://www.webfx.com/tools/emoji-cheat-sheet/
@@ -16,7 +15,6 @@ df = pd.read_csv('covid_19_2020.csv')
 img = Image.open('covid-logo.png')
 st.sidebar.image(img)
 st.sidebar.header("Please Filter the Country Here: ")
-
 # Filter by Country
 selected_country = st.sidebar.selectbox(
     "Select the Country:",
@@ -83,24 +81,22 @@ with right_column:
 st.markdown("---")
 
 # Menampilkan data dalam bentuk grafik
-col1, col2 = st.columns(2)
+# Grafik 1: Gabungan dari Confirmed, Recovered, Deaths (Grafik Garis)
+fig, ax = plt.subplots(figsize=(5, 3), facecolor='lightgrey')  
+ax.plot(['Confirmed', 'Recovered', 'Deaths'], [total_confirmed, total_recovered, total_death], marker='o', linestyle='-', color='b')
+ax.set_xlabel('Case Type', fontsize=8, color='green')
+ax.set_ylabel('Total', fontsize=8, color='red')
+st.write("### Confirmed COVID-19 Cases")
+st.caption('###### Confirmed COVID-19 Cases are the total number of individuals who have tested positive for the COVID-19 virus. This figure includes individuals who have tested positive based on PCR test results or other tests associated with the virus. This data is important to understand the spread and development of COVID-19 cases in a region or globally, providing an idea of the extent of the spread of the virus and its impact on society.')
+st.pyplot(fig)
 
-# Grafik 2: Recovered vs Deaths Cases (Grafik Batang)
-with col1:
-    # Grafik 1: Gabungan dari Confirmed, Recovered, Deaths (Grafik Garis)
-    fig, ax = plt.subplots(figsize=(8, 6), facecolor='lightgrey')  
-    ax.plot(['Confirmed', 'Recovered', 'Deaths'], [total_confirmed, total_recovered, total_death], marker='o', linestyle='-', color='b')
-    ax.set_xlabel('Case Type', fontsize=12, color='green')
-    ax.set_ylabel('Total', fontsize=12, color='red')
-    st.write("### Confirmed COVID-19 Cases")
-    st.pyplot(fig)
 
-# Grafik 3: Jumlah Recovered vs Deaths Cases dalam Pie Chart
-with col2:
-    # Grafik 2 & 3: Menampilkan Recovered dan Deaths sebagai dua batang dalam satu grafik
-    fig2, ax2 = plt.subplots(figsize=(8, 6), facecolor='lightgrey')
-    ax2.bar(['Recovered', 'Deaths'], [total_recovered, total_death], color=['g', 'r'])
-    ax2.set_xlabel('Case Type', fontsize=12, color='green')
-    ax2.set_ylabel('Total', fontsize=12, color='red')
-    st.write("### Recovered vs Deaths Cases")
-    st.pyplot(fig2)
+# Grafik 2 & 3: Menampilkan Recovered dan Deaths sebagai dua batang dalam satu grafik
+fig2, ax2 = plt.subplots(figsize=(5, 3), facecolor='lightgrey')
+ax2.bar(['Recovered', 'Deaths'], [total_recovered, total_death], color=['g', 'r'])
+ax2.set_xlabel('Case Type', fontsize=8, color='green')
+ax2.set_ylabel('Total', fontsize=8, color='red')
+st.write("### Recovered vs Deaths Cases")
+st.caption('##### Recovered vs Deaths Cases" is a comparison between the number of individuals who have recovered from COVID-19 infection with the number of individuals who have died from the infection. In the context of the COVID-19 pandemic, this comparison provides an overview of the public health response to the virus.')
+st.pyplot(fig2)
+
