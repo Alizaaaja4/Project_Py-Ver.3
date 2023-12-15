@@ -4,7 +4,7 @@
 
 Project : Py-Ver.3
 
-COVID-19 Data Explorer is a data analysis and visualization project that aims to provide deep insights into the worldwide COVID-19 pandemic. The project uses the latest data from trusted sources such as Johns Hopkins University and Our World in Data to present relevant information on trends, statistics, and comparisons of COVID-19 cases.
+COVID-19 Data Explorer is a data analysis and visualization project that aims to provide in-depth insights into the COVID-19 pandemic in Indonesia. The project uses the latest data from trusted sources such as Johns Hopkins University and Our World in Data to present relevant information on trends, statistics, and comparisons of COVID-19 cases.
 
 Developer :  
 - [Aliza Nurfitrian Meizahra ](https://github.com/Alizaaaja4) [ALL]
